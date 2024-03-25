@@ -8,14 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+@Entity//indica que e uma entidade que sera traformada de POO para Banco de Dados Relacional
 @Table(name="tb_user")
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id/*Indica pro navegador o atributo a baixo e a chave primaria */
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//Indica que no banco de dados a chave primaria sera auto incrementada
 	private Long id ;
 	private String name ;
 	private String email ;

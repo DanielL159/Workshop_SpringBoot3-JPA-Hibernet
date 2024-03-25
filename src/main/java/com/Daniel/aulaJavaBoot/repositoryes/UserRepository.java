@@ -6,6 +6,5 @@ import com.Daniel.aulaJavaBoot.entities.User;
 
 public interface UserRepository extends JpaRepository<User, Long>{ 
 //Interface auto implementada do Jpa
-//
 
 }
