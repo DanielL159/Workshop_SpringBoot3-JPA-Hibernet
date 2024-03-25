@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Daniel.aulaJavaBoot.entities.User;
-import com.Daniel.aulaJavaBoot.services.UserService;
+import com.Daniel.aulaJavaBoot.entities.Order;
+import com.Daniel.aulaJavaBoot.services.OrderService;
 
 
 @RestController//Indica que e um recurso web que e implementado por um controlador reste
-@RequestMapping(value = "/users")//Da nome ao recurso
-public class UserResource {
+@RequestMapping(value = "/orders")//Da nome ao recurso
+public class OrderResource {
 	
 	@Autowired
-	private UserService service;
+	private OrderService service;
 	
 	@GetMapping//Indica que esse metodo que responde o tipo get do http
-	public ResponseEntity<List<User>> findAll(){ //ResponseEntity e um tipo especifico do spring para retornar resposta de requisiçoes web
-		List<User> list = service.findAll();
+	public ResponseEntity<List<Order>> findAll(){ //ResponseEntity e um tipo especifico do spring para retornar resposta de requisiçoes web
+		List<Order> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<User> findById(@PathVariable Long id){
-		User obj = service.findById(id);
+	public ResponseEntity<Order> findById(@PathVariable Long id){
+		Order obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
